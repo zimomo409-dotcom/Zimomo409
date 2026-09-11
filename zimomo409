@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zimo's Gaming Vlog - Roblox, Minecraft, challenges and adventures.">
+  <title>ZIMO // Gaming Vlog</title>
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --panel: #101728;
+      --panel2: #151d31;
+      --text: #f5f7ff;
+      --muted: #aab4ca;
+      --accent: #7c5cff;
+      --accent2: #00d4ff;
+      --border: rgba(255,255,255,0.1);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(124,92,255,0.18),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(0,212,255,0.12),
+          transparent 25%
+        ),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(7,11,20,0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      font-size: 1.2rem;
+    }
+
+    .logo span {
+      color: var(--accent2);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      color: var(--muted);
+      font-weight: bold;
+    }
+
+    .nav-links a {
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 720px;
+      display: grid;
+      place-items: center;
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      padding: 8px 13px;
+      border-radius: 999px;
+      color: #dce4ff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #41ff91;
+      box-shadow: 0 0 14px #41ff91;
+    }
+
+    h1 {
+      font-size: clamp(3.6rem, 9vw, 7.8rem);
+      line-height: 0.86;
+      margin: 24px 0;
+      letter-spacing: -0.075em;
+    }
+
+    h1 .gradient {
+      background: linear-gradient(
+        100deg,
+        #ffffff 10%,
+        #a78bfa 48%,
+        #00d4ff 90%
+      );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    /* ================= BUTTONS ================= */
+
+    .buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      padding: 13px 20px;
+      border-radius: 13px;
+      font-weight: 900;
+      transition: 0.2s;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(
+        100deg,
+        var(--accent),
+        #5f8dff
+      );
+      border: none;
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.12);
+    }
+
+    /* ================= HERO CARD ================= */
+
+    .hero-card {
+      position: relative;
+      min-height: 470px;
+      border-radius: 30px;
+      background: linear-gradient(
+        145deg,
+        #171f36,
+        #0c1220
+      );
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(124,92,255,0.65),
+        transparent 65%
+      );
+      filter: blur(10px);
+    }
+
+    /* Gaming controller illustration */
+
+    .controller {
+      position: relative;
+      width: 245px;
+      height: 145px;
+      border-radius: 75px;
+      background: #e9edff;
+      transform: rotate(-9deg);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.55);
+    }
+
+    .controller::before,
+    .controller::after {
+      content: "";
+      position: absolute;
+      top: 49px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #121827;
+    }
+
+    .controller::before {
+      left: 52px;
+    }
+
+    .controller::after {
+      right: 52px;
+    }
+
+    .controller .stick {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #121827;
+      top: 88px;
+    }
+
+    .stick.one {
+      left: 75px;
+    }
+
+    .stick.two {
+      right: 75px;
+    }
+
+    .controller .bar {
+      position: absolute;
+      width: 38px;
+      height: 10px;
+      border-radius: 8px;
+      background: #121827;
+      left: 104px;
+      top: 45px;
+    }
+
+    .floating {
+      position: absolute;
+      padding: 10px 13px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(8,12,23,0.82);
+      backdrop-filter: blur(10px);
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    .f1 {
+      top: 28px;
+      right: 25px;
+    }
+
+    .f2 {
+      bottom: 32px;
+      left: 25px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 95px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 35px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      letter-spacing: -0.05em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 540px;
+    }
+
+    /* ================= GAMES ================= */
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 22px;
+    }
+
+    .game-card {
+      min-height: 300px;
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        145deg,
+        var(--panel2),
+        var(--panel)
+      );
+      position: relative;
+      overflow: hidden;
+    }
+
+    .game-card::after {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      right: -80px;
+      bottom: -90px;
+      background: rgba(124,92,255,0.18);
+      filter: blur(5px);
+    }
+
+    .game-icon {
+      font-size: 3rem;
+      margin-bottom: 25px;
+    }
+
+    .game-card h3 {
+      font-size: 2rem;
+      margin-bottom: 9px;
+    }
+
+    .game-card p {
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 7px 10px;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.06);
+      color: #dce4ff;
+      font-size: 0.78rem;
+      font-weight: 900;
+    }
+
+    /* ================= VLOG ================= */
+
+    .featured {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+    }
+
+    .video {
+      min-height: 420px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(124,92,255,0.5),
+          rgba(0,212,255,0.12)
+        ),
+        radial-gradient(
+          circle at 70% 30%,
+          #3b2c7d,
+          #0c1220 55%
+        );
+
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: end;
+      padding: 32px;
+    }
+
+    .play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 5rem;
+      text-shadow: 0 10px 40px #000;
+      opacity: 0.95;
+    }
+
+    .video-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .video-content h3 {
+      font-size: 2rem;
+      margin-bottom: 7px;
+    }
+
+    .video-content p {
+      color: #d0d7e9;
+    }
+
+    /* ================= DASHBOARD ================= */
+
+    .side-panel {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .side-panel h3 {
+      font-size: 1.5rem;
+      margin-bottom: 18px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* ================= POSTS ================= */
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .post {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: 18px;
+      padding: 23px;
+      transition: 0.2s;
+    }
+
+    .post:hover {
+      transform: translateY(-4px);
+      background: var(--panel2);
+    }
+
+    .post small {
+      color: #8f9ab4;
+      font-weight: 800;
+    }
+
+    .post h3 {
+      margin: 10px 0;
+    }
+
+    .post p {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .about-box {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+
+    .avatar {
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(
+        145deg,
+        #1a2340,
+        #0b101c
+      );
+      font-size: 6rem;
+      font-weight: 1000;
+      letter-spacing: -0.1em;
+    }
+
+    .about-box h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+      margin-bottom: 15px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact {
+      text-align: center;
+      padding: 70px 25px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: linear-gradient(
+        145deg,
+        rgba(124,92,255,0.13),
+        rgba(0,212,255,0.06)
+      );
+    }
+
+    .contact h2 {
+      font-size: clamp(2.3rem,6vw,4.5rem);
+      letter-spacing: -0.06em;
+    }
+
+    .contact p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 15px auto 0;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: #7f8aa3;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= IPAD / PHONE ================= */
+
+    @media (max-width: 850px) {
+
+      .hero-grid,
+      .featured,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .hero-card {
+        min-height: 350px;
+      }
+
+      .games {
+        grid-template-columns: 1fr;
+      }
+
+      .posts {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      h1 {
+        font-size: 4rem;
+      }
+
+      .hero-card {
+        min-height: 300px;
+      }
+
+      .controller {
+        transform: scale(0.75) rotate(-9deg);
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a class="logo" href="#top">
+        ZIMO<span>.GG</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#games">Games</a>
+        <a href="#vlog">Vlog</a>
+        <a href="#posts">Posts</a>
+        <a href="#about">About</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            <span class="dot"></span>
+            GAMING VLOG • ONLINE
+          </div>
+
+          <h1>
+            HEY, I'M
+            <span class="gradient">ZIMO.</span>
+          </h1>
+
+          <p>
+            Welcome to my gaming world.
+            I play Roblox, Minecraft, challenges,
+            crazy experiments, and whatever looks fun.
+            New adventures are coming.
+          </p>
+
+          <div class="buttons">
+
+            <a class="btn primary" href="#vlog">
+              ▶ Watch the Vlog
+            </a>
+
+            <a class="btn secondary" href="#about">
+              ★ Meet Zimo
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Gaming graphic -->
+
+        <div class="hero-card">
+
+          <div class="floating f1">
+            ROBLOX MODE
+          </div>
+
+          <div class="floating f2">
+            MINECRAFT MODE
+          </div>
+
+          <div class="controller">
+
+            <div class="stick one"></div>
+            <div class="stick two"></div>
+
+            <div class="bar"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= GAMES ================= -->
+
+    <section id="games">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>MY GAMES</h2>
+
+          <p>
+            Two of my favorite places to play,
+            build, compete, and create.
+          </p>
+
+        </div>
+
+
+        <div class="games">
+
+          <!-- Roblox -->
+
+          <article class="game-card">
+
+            <div class="game-icon">
+              🎮
+            </div>
+
+            <h3>
+              Roblox
+            </h3>
+
+            <p>
+              Competitive matches, funny moments,
+              challenges, custom ideas, and epic gameplay.
+              Roblox is one of my main games.
+            </p>
+
+            <span class="tag">
+              RIVALS • CHALLENGES • CLIPS
+            </span>
+
+          </article>
+
+
+          <!-- Minecraft -->
+
+          <article class="game-card">
+
+            <div class="game-icon">
+              ⛏️
+            </div>
+
+            <h3>
+              Minecraft
+            </h3>
+
+            <p>
+              Survival, building, exploring, experiments,
+              and giant projects. Sometimes the plan works.
+              Sometimes a creeper happens.
+            </p>
+
+            <span class="tag">
+              SURVIVAL • BUILDING • ADVENTURES
+            </span>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= VLOG ================= -->
+
+    <section id="vlog">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>
+            FEATURED VLOG
+          </h2>
+
+          <p>
+            This is your featured-video area.
+            Replace the demo area with your real
+            YouTube video later.
+          </p>
+
+        </div>
+
+
+        <div class="featured">
+
+          <article class="video">
+
+            <div class="play">
+              ▶
+            </div>
+
+            <div class="video-content">
+
+              <h3>
+                MY FIRST BIG GAMING VLOG
+              </h3>
+
+              <p>
+                Roblox + Minecraft • Epic moments • More coming soon
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <aside class="side-panel">
+
+            <h3>
+              Vlog Dashboard
+            </h3>
+
+            <div class="stats">
+
+              <div class="stat">
+                <strong>02</strong>
+                <span>Favorite Games</span>
+              </div>
+
+              <div class="stat">
+                <strong>∞</strong>
+                <span>Ideas</span>
+              </div>
+
+              <div class="stat">
+                <strong>🎮</strong>
+                <span>Gaming</span>
+              </div>
+
+              <div class="stat">
+                <strong>🔥</strong>
+                <span>New Clips</span>
+              </div>
+
+            </div>
+
+            <div class="buttons">
+
+              <a class="btn primary" href="#posts">
+                See Updates
+              </a>
+
+            </div>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= POSTS ================= -->
+
+    <section id="posts">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <h2>
+            LATEST POSTS
+          </h2>
+
+          <p>
+            Use these cards for future videos,
+            announcements, challenges, or gaming stories.
+          </p>
+
+        </div>
+
+
+        <div class="posts">
+
+          <article class="post">
+
+            <small>
+              ROBLOX • NEW
+            </small>
+
+            <h3>
+              Only Knife Challenge
+            </h3>
+
+            <p>
+              Can I win using only a knife?
+              This is where the challenge begins.
+            </p>
+
+          </article>
+
+
+          <article class="post">
+
+            <small>
+              MINECRAFT • ADVENTURE
+            </small>
+
+            <h3>
+              My Next Build
+            </h3>
+
+            <p>
+              A new Minecraft project is coming.
+              Bigger, crazier, and more detailed.
+            </p>
+
+          </article>
+
+
+          <article class="post">
+
+            <small>
+              VLOG • COMING SOON
+            </small>
+
+            <h3>
+              Behind the Scenes
+            </h3>
+
+            <p>
+              How I record, play, edit, and turn
+              gaming moments into videos.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+      <div class="container about">
+
+        <div class="about-box avatar">
+          ZIMO
+        </div>
+
+
+        <div class="about-box">
+
+          <h2>
+            ABOUT ZIMO
+          </h2>
+
+          <p>
+            Hey! I'm Zimo.
+            I love video games and I enjoy making
+            fun gaming content.
+            Roblox and Minecraft are two of my favorites.
+          </p>
+
+          <p>
+            This website is my home base for my gaming vlog.
+            I'll use it to share videos, clips, updates,
+            projects, and the next adventure.
+          </p>
+
+          <a class="btn secondary" href="#top">
+            Back to Top ↑
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FINAL SECTION ================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="contact">
+
+          <h2>
+            READY FOR THE NEXT GAME?
+          </h2>
+
+          <p>
+            Keep checking back for new videos,
+            challenges, builds, and gaming adventures.
+          </p>
+
+          <div
+            class="buttons"
+            style="justify-content:center"
+          >
+
+            <a class="btn primary" href="#vlog">
+              Enter the Vlog ▶
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <span id="copyright">
+        © 2026 ZIMO.GG
+      </span>
+
+      <span>
+        Built for gaming • Roblox • Minecraft
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= JAVASCRIPT ================= -->
+
+  <script>
+
+    // Automatically keeps the copyright year current.
+
+    document.getElementById("copyright").textContent =
+      "© " +
+      new Date().getFullYear() +
+      " ZIMO.GG";
+
+  </script>
+
+</body>
+</html>
